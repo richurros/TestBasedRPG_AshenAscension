@@ -1,12 +1,7 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
- > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+# Ashen Ascension
  
- > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). Your project needs to implement at least one design pattern iteratively, which you will have to justify in later phases.The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings. While Daily Scrums are not required we highly encourage you to practice them.
+ > Authors: Ronit Bhushan - (https://github.com/rbhus002); Malina Martinez - (https://github.com/mmart505); Jenhua Chang - (https://github.com/jchan434); Richard Kim - https://github.com/richurros 
 
  
  > ## Expectations
@@ -20,15 +15,26 @@
 
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
+ >   * Our project will be a mystery/dungeon crawl text-based rpg. In the game the user plays as a character that mysteriously finds themselves in a dungeon and must traverse higher and higher to more dangerous levels in an attempt to figure out why they are there and how to get out? In order to traverse these levels of the dungeon, the player must interact with the world in order to find out where to go and they must fight certain enemies.  The reason why this project is important to us is because all of us have had no prior experience with game development so doing this project will give us some experience in game development and give us some insight on whether we like game development or not. The reason why this project is important to us is because we all have experience with playing video games so it will be interesting to learn how to make a video game ourselves.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
+ >   * C++ - The coding language we will be using
  > * What will be the input/output of your project? What are the features that the project provides?
+ >   * Input (Outside of Combat):
+ >     * User can type in commands with certain action keywords that let them interact with the world in the game
+ >     * "PICK up \<item_name\>"
+ >     * "MOVE to \<location_name\>"
+ >     * "TALK to \<NPC_name\>"
+ >     * This allows the user to interact with the world in their own way as long as they use the commands
+ >   * Input (During Combat):
+ >     * The User is given a set of commands they can choose from
+ >     * Consisting of attack, flee, or use an itme within combat
+ >     * as of right now still working on options for combat
+ >   * Output
+ >     * Output during combat would be text that shows the health bar of both the enemies and the player, it shows the set of actions that user can do and its stats if the action has stats, and this output would reprint after every turn to update the health bars and etc. The output would also print out whether an attack was succesful or not.
+ >     * Output outside of combat would basically be text that are descriptions in order to aid the user in visualising the game. After each action text would be written back in response to the user's choice. These descriptions would also help progress the player through the game.
+ >   * The features of this game are that there will be multiple characters to choose from, each with different abilities, stats, flaws, and etc. that make them unique. The player will progres through the dungeon by finding their way to next level by using the hints they find in the world and by fighting various enemeies that they will encounter along the way. The combat system is a turned based combat system, and the player will have the choices to attack, use an item, or flee the battle. Depending on the plater and enemy stats, damage received and dealt will vary accordingly so the plater must strategize each and every turn in order to succeed. The player will have an inventory system that will hold all kinds of items. One type item would be potions that boost stats during battle. Other items would weapons and armor that increase the base stats that the user has so they are stronger in combat. Another type of item would be story relevant items where the item is necessary in order for the player to progress in the game (like a key to a door).
  > 
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
- > You also need to set up an empty project board by choosing the  “Automated kanban with review” option on Github. You should also have a Backlog and In testing columns added.
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Backlog` column
