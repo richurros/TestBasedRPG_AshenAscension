@@ -1,31 +1,31 @@
  
 # Ashen Ascension
  
- > Authors: Ronit Bhushan - (https://github.com/rbhus002); Malina Martinez - (https://github.com/mmart505); Jenhua Chang - (https://github.com/jchan434); Richard Kim - (https://github.com/richurros) 
+Authors: Ronit Bhushan - (https://github.com/rbhus002); Malina Martinez - (https://github.com/mmart505); Jenhua Chang - (https://github.com/jchan434); Richard Kim - (https://github.com/richurros) 
 
 
 
 ## Project Description
- > * Why is it important or interesting to you?
- >   * Our project will be a mystery/dungeon crawl text-based rpg. In the game the user plays as a character that mysteriously finds themselves in a dungeon and must traverse higher and higher to more dangerous levels in an attempt to figure out why they are there and how to get out? In order to traverse these levels of the dungeon, the player must interact with the world in order to find out where to go and they must fight certain enemies.  The reason why this project is important to us is because all of us have had no prior experience with game development so doing this project will give us some experience in game development and give us some insight on whether we like game development or not. The reason why this project is important to us is because we all have experience with playing video games so it will be interesting to learn how to make a video game ourselves.
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * C++ - The coding language we will be using
- > * What will be the input/output of your project? What are the features that the project provides?
- >   * Input (Outside of Combat):
- >     * User can type in commands with certain action keywords that let them interact with the world in the game
- >     * "PICK up \<item_name\>"
- >     * "MOVE to \<location_name\>"
- >     * "TALK to \<NPC_name\>"
- >     * This allows the user to interact with the world in their own way as long as they use the commands
- >   * Input (During Combat):
- >     * The User is given a set of commands they can choose from
- >     * Consisting of attack, flee, or use an itme within combat
- >     * as of right now still working on options for combat
- >   * Output
- >     * Output during combat would be text that shows the health bar of both the enemies and the player, it shows the set of actions that user can do and its stats if the action has stats, and this output would reprint after every turn to update the health bars and etc. The output would also print out whether an attack was succesful or not.
- >     * Output outside of combat would basically be text that are descriptions in order to aid the user in visualising the game. After each action text would be written back in response to the user's choice. These descriptions would also help progress the player through the game.
- >   * The features of this game are that there will be multiple characters to choose from, each with different abilities, stats, flaws, and etc. that make them unique. The player will progres through the dungeon by finding their way to next level by using the hints they find in the world and by fighting various enemeies that they will encounter along the way. The combat system is a turned based combat system, and the player will have the choices to attack, use an item, or flee the battle. Depending on the plater and enemy stats, damage received and dealt will vary accordingly so the plater must strategize each and every turn in order to succeed. The player will have an inventory system that will hold all kinds of items. One type item would be potions that boost stats during battle. Other items would weapons and armor that increase the base stats that the user has so they are stronger in combat. Another type of item would be story relevant items where the item is necessary in order for the player to progress in the game (like a key to a door).
- > 
+* Why is it important or interesting to you?
+  * Our project will be a mystery/dungeon crawl text-based rpg. In the game the user plays as a character that mysteriously finds themselves in a dungeon and must traverse higher and higher to more dangerous levels in an attempt to figure out why they are there and how to get out? In order to traverse these levels of the dungeon, the player must interact with the world in order to find out where to go and they must fight certain enemies.  The reason why this project is important to us is because all of us have had no prior experience with game development so doing this project will give us some experience in game development and give us some insight on whether we like game development or not. The reason why this project is important to us is because we all have experience with playing video games so it will be interesting to learn how to make a video game ourselves.
+ * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+   * C++ - The coding language we will be using
+ * What will be the input/output of your project? What are the features that the project provides?
+   * Input (Outside of Combat):
+     * User can type in commands with certain action keywords that let them interact with the world in the game
+     * "PICK up \<item_name\>"
+     * "MOVE to \<location_name\>"
+     * "TALK to \<NPC_name\>"
+     * This allows the user to interact with the world in their own way as long as they use the commands
+   * Input (During Combat):
+     * The User is given a set of commands they can choose from
+     * Consisting of attack, flee, or use an itme within combat
+     * as of right now still working on options for combat
+   * Output
+     * Output during combat would be text that shows the health bar of both the enemies and the player, it shows the set of actions that user can do and its stats if the action has stats, and this output would reprint after every turn to update the health bars and etc. The output would also print out whether an attack was succesful or not.
+     * Output outside of combat would basically be text that are descriptions in order to aid the user in visualising the game. After each action text would be written back in response to the user's choice. These descriptions would also help progress the player through the game.
+    * The features of this game are that there will be multiple characters to choose from, each with different abilities, stats, flaws, and etc. that make them unique. The player will progres through the dungeon by finding their way to next level by using the hints they find in the world and by fighting various enemeies that they will encounter along the way. The combat system is a turned based combat system, and the player will have the choices to attack, use an item, or flee the battle. Depending on the plater and enemy stats, damage received and dealt will vary accordingly so the plater must strategize each and every turn in order to succeed. The player will have an inventory system that will hold all kinds of items. One type item would be potions that boost stats during battle. Other items would weapons and armor that increase the base stats that the user has so they are stronger in combat. Another type of item would be story relevant items where the item is necessary in order for the player to progress in the game (like a key to a door).
+ 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Backlog` column
