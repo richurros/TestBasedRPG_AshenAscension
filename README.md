@@ -39,8 +39,52 @@ Authors: Ronit Bhushan - (https://github.com/rbhus002); Malina Martinez - (https
  >     * How work will be divided between the team members
 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
 ![umlClassDiagram](uml.PNG)
+Entity Class:
+- has private attributes: name, maxHealth, atk, defense, spd, dmgTaken
+- getters/setters for each attribute
+- contains virtual functions so inheriting classes must include those functions appropriately. For ecample, Player and Enemy should both have a function to attack, but they will be slightly different from each other.
+
+Enemy Class:
+- inherits from Entity Class
+- has private attributes: atkBoost, defBoost, spdBoost (these all determine if the enemy has a boost in a particular stat)
+- attack(Player x) returns a number specifying how much damage is dealt to Player object
+- defend(Player x) allows for the enemy to boost defenses more when taking damage
+- printHealth() prints the current health of the Enemy object
+
+Player Class:
+- inherits from Entity Class
+- has private attributes: inventory, weaponEq (what weapon is equipped), armorEq(what armor is equipped), playerClass(what class did the user choose for the Player object), location (where the user is currently), combatPt(indicator of how many combat points the user has per turn)
+- printInv() prints out entire inventory
+- addToInv/rmFromInv() adds or removes items from inventory vector
+- attack(), printHealth(), and defend() all function the same as that in Enemy, adjusting to target Enemy instead of Player
+- eqWeapon() and eqArmor() equip weapons and armor respectively
+- fleeBattle() allows user to flee a battle (chance based on speed)
+- move() indicates where along the story the user can move to
+- talkToNPC() allows for user to talk to an NPC if needed
+
+Item Class:
+- aggregates to Player class, Player's inventory is an array that holds items
+- private attributes: desc(item description), name(item name), itemCount(how much of the item is there)
+- printItem() prints out item name, description, and quantity
+- getters for name and item count
+
+Weapon Class:
+- inherits from Item Class
+- Increases Player attack attirbute when equipped
+- private attributes: atk(attack stat buff), isEquipped (checks if the item is equipped by Player object)
+- eqWeapon() changes bool isEquipped to true
+
+Armor Class:
+- inherits from Item Class
+-  Increases Player defense attirbute when equipped
+- private attributes: def (defense stat buff), isEquipped (checks if the item is equipped by Player object)
+- eqArmor() changes bool isEquipped to true
+
+Potion Class:
+- inherits from Item Class
+- private attributes: attack, health, speed, defense (all act as buffing stats when used up by Player object)
+- usePotion() uses up Potion object in turn for a buff in whichever stat(s) the Potion object's attribute has a positive number for
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
