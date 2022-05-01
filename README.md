@@ -27,35 +27,25 @@ Authors: Ronit Bhushan - (https://github.com/rbhus002); Malina Martinez - (https
     * The features of this game are that there will be multiple characters to choose from, each with different abilities, stats, flaws, and etc. that make them unique. The player will progres through the dungeon by finding their way to next level by using the hints they find in the world and by fighting various enemeies that they will encounter along the way. The combat system is a turned based combat system, and the player will have the choices to attack, use an item, or flee the battle. Depending on the plater and enemy stats, damage received and dealt will vary accordingly so the plater must strategize each and every turn in order to succeed. The player will have an inventory system that will hold all kinds of items. One type item would be potions that boost stats during battle. Other items would weapons and armor that increase the base stats that the user has so they are stronger in combat. Another type of item would be story relevant items where the item is necessary in order for the player to progress in the game (like a key to a door).
  
  > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to:
- > * Create an "Epic" (note) for each feature. Place these epics in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
- > * Schedule two check-ins using Calendly. You need to pick both time slots during your lab on week 6. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
 
-## Class Diagram
-![umlClassDiagram](uml.PNG)
-Entity Class:
-- has private attributes: name, maxHealth, atk, defense, spd, dmgTaken
-- getters/setters for each attribute
-- contains virtual functions so inheriting classes must include those functions appropriately. For ecample, Player and Enemy should both have a function to attack, but they will be slightly different from each other.
+ ## Class Diagram
+ ![umlClassDiagram](uml.PNG)
+ Entity Class:
+ - has private attributes: name, maxHealth, atk, defense, spd, dmgTaken
+ - getters/setters for each attribute
+ - contains virtual functions so inheriting classes must include those functions appropriately. For ecample, Player and Enemy should both have a function to attack,  but they will be slightly different from each other.
 
-Enemy Class:
-- inherits from Entity Class
-- has private attributes: atkBoost, defBoost, spdBoost (these all determine if the enemy has a boost in a particular stat)
-- attack(Player x) returns a number specifying how much damage is dealt to Player object
-- defend(Player x) allows for the enemy to boost defenses more when taking damage
-- printHealth() prints the current health of the Enemy object
+ Enemy Class:
+ - inherits from Entity Class
+ - has private attributes: atkBoost, defBoost, spdBoost (these all determine if the enemy has a boost in a particular stat)
+ - attack(Player x) returns a number specifying how much damage is dealt to Player object
+ - defend(Player x) allows for the enemy to boost defenses more when taking damage
+ - printHealth() prints the current health of the Enemy object
 
-Player Class:
-- inherits from Entity Class
-- has private attributes: inventory, weaponEq (what weapon is equipped), armorEq(what armor is equipped), playerClass(what class did the user choose for the Player object), location (where the user is currently), combatPt(indicator of how many combat points the user has per turn)
-- printInv() prints out entire inventory
+ Player Class:
+ - inherits from Entity Class
+ - has private attributes: inventory, weaponEq (what weapon is equipped), armorEq(what armor is equipped), playerClass(what class did the user choose for the Player object), location (where the user is currently), combatPt(indicator of how many combat points the user has per turn)
+ - printInv() prints out entire inventory
 - addToInv/rmFromInv() adds or removes items from inventory vector
 - attack(), printHealth(), and defend() all function the same as that in Enemy, adjusting to target Enemy instead of Player
 - eqWeapon() and eqArmor() equip weapons and armor respectively
