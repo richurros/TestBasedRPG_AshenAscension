@@ -1,27 +1,19 @@
-#ifndef WEAPON_H
-#define WEAPON_H
+#pragma once
 
 #include <string>
 #include <item.h>
-#pragma once
+
 using namespace std;
 
 class Weapon : public Item {
 public:
-    void print();
-    string getName();
-    int getItemCount();
-    string getDesc();
-    void setName(string name);
-    void setItemCount(int count);
-    void setDesc(string desc);
-    void eqWeapon(Weapon w);
     Weapon();
-    ~Weapon();
+    int getAttack();
+    void setAttack(int atk);
+    Weapon(string n = "", string d = "", int i = 1, int atk = 0 );
 
 private:
     int attack;
-    bool isEquipped;
 };
 
-#endif
+

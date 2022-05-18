@@ -1,47 +1,19 @@
-#include "Weapon.h"
-
+#include "weapon.h"
 #include <iostream>
 
 using namespace std;
 
-Weapon::print() {
-    cout << getDesc() << endl;
+void Weapon::setAttack(int atk){
+    attack = atk;
 }
 
-string Weapon::getName(){
-    return name;
+int Weapon::getAttack(){
+    return attack;
 }
 
-int Weapon::getItemCount(){
-    return itemCount;
+Weapon::Weapon(string n = "", string d = "", int i = 1, int atk = 0) {
+    setName (n);
+    setDesc (d);
+    setItemCount(1);
+    setAttack (atk);
 }
-
-string Weapon::getDesc(){
-    return desc;
-}
-
-void Weapon::setName(string nm){
-    name = nm;
-}
-
-void Weapon::setItemCount(int conut){
-    itemCount = conut;
-}
-
-void Weapon::setDesc(string dsc){
-    desc = dsc;
-}
-
-void Weapon::eqWeapon(Weapon w) {
-    isEquipped = true;
-    atk += attack;
-}
-
-Weapon::Weapon() {
-    attack = 0;
-    isEquipped = false;
-}
-
-Weapon::~Weapon() {
-}
-

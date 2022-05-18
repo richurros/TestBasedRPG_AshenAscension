@@ -55,17 +55,17 @@ Item Player::getItem(unsigned n) {
 	return this->vInventory.at(n);
 }
 
-void eqWeapon(Weapon w)
+void Player::eqWeapon(Weapon w)
 {
   
 }
 
-void eqArmor(Armor a)
+void Player::eqArmor(Armor a)
 {
   
 }
 
-void move()
+void Player::move()
 {
   
 }
