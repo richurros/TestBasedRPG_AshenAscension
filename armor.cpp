@@ -1,47 +1,19 @@
-nclude "Armor.h"
-
+#include "armor.h"
 #include <iostream>
 
 using namespace std;
 
-Armor::print() {
-    cout << getDesc() << endl;
+void Armor::setDefense(int df){
+    defense = df;
+}
+int Armor::getDefense(){
+    return defense;
 }
 
-string Armor::Armor() {
-    return name;
-}
-
-int Armor::getItemCount() {
-    return itemCount;
-}
-
-string Armor::getDesc() {
-    return desc;
-}
-
-void Armor::setName(string nm) {
-    name = nm;
-}
-
-void Armor::setItemCount(int conut) {
-    itemCount = conut;
-}
-
-void Armor::setDesc(string dsc) {
-    desc = dsc;
-}
-
-void Armor::eqArmor(Armor a) {
-    isEquipped = true;
-    defense += def;
-}
-
-Armor::Armor() {
-    def = 0;
-    isEquipped = false;
-}
-
-Armor::~Armor() {
+Armor::Armor(string n = "", string d = "", int i = 1, int df = 0) {
+    setName (n);
+    setDesc (d);
+    setItemCount(1);
+    setDefense(df);
 }
 

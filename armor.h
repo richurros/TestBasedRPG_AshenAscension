@@ -1,28 +1,18 @@
-fndef ARMOR_H
-#define ARMOR_H
+#pragma once
 
 #include <string>
 #include <item.h>
-#pragma once
+
 using namespace std;
 
 class Armor : public Item {
 public:
-    void print();
-    string getName();
-    int getItemCount();
-    string getDesc();
-    void setName(string name);
-    void setItemCount(int count);
-    void setDesc(string desc);
-    void eqArmor(Armor a);
-    int getDefense();
     Armor();
-    ~Armor();
-
+    int getDefense();
+    void setDefense(int df);
+    Armor(string n = "", string d = "", int i = 1, int df = 0 );
 private:
-    int def;
-    bool isEquipped;
+    int defense;
+
 };
 
-#endif

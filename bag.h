@@ -12,6 +12,7 @@ class Bag : public Item {
     private:
 	vector<Item> vBag;
     public:
+	Item getItem(unsigned);
         void printBag();
 	void addToBag(Item n);
 	void rmFromBag(Item n);

@@ -36,3 +36,11 @@ void Bag::rmFromBag(Item n) {
         }
 
 }
+
+Item Bag::getItem(unsigned n) {
+	if (n >= this->vBag.size()) {
+		cout << "Invalid location, sending empty item" << endl;
+		return Item();
+	}
+	return this->vBag.at(n);
+}
