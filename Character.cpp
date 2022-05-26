@@ -21,12 +21,22 @@ void Character::setName(string n) {
 	name = n;
 }
 
+void Character::setBoolDef(bool def) {
+	BoolDef = def;
+}
+
+void Character::setDmgTaken(int d) {
+	dmgTaken = d;
+}
+
 Character::Character() {
 	setAtk(0);
 	setDefense(0);
 	setSpd(0);
 	setMaxHealth(0);
 	setName("name");
+	setBoolDef(false);
+	setDmgTaken(0);
 }
 Character::Character(string name, int maxHealth, int atk, int defense, int spd) {
 	setAtk(atk);
@@ -34,4 +44,6 @@ Character::Character(string name, int maxHealth, int atk, int defense, int spd) 
 	setSpd(spd);
 	setMaxHealth(maxHealth);
 	setName(name);
+	setBoolDef(false);
+	setDmgTaken(0);
 }
