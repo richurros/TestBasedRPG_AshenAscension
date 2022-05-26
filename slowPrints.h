@@ -6,4 +6,4 @@
 
 using namespace std;
 
-void slowStringPrint(string s);
+void slowStringPrint(string s, string name)
