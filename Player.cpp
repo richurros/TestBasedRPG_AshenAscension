@@ -74,10 +74,10 @@ int Player::attack(Enemy &x)
 {
 	if (x.getBoolDef() == true)
 	{
-		int damageDone == this->getAtk() - x.getDefense();
+		int damageDone == ((x.getDefesne()/100)*this->getAtk()) - x.getDefense();
 		if (damageDone > 0)
 		{
-			x.setDmgTaken(damageDone);
+			x.setDmgTaken(damageDone+x.getDmgTaken());
 			x.setBoolDef(false);
 			return damageDone;
 		}
@@ -89,8 +89,8 @@ int Player::attack(Enemy &x)
 	}
 	else
 	{
-		int damageDone1 = this->getAtk()
-		x.setDmgTaken(damageDone1);
+		int damageDone1 = ((x.getDefense()/100)*this->getAtk());
+		x.setDmgTaken(damageDone1+x.getDmgTaken);
 		return damageDone1;
 	}
 }
