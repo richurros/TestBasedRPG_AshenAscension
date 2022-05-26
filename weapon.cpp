@@ -1,5 +1,6 @@
 #include "weapon.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -11,9 +12,11 @@ int Weapon::getAttack(){
     return attack;
 }
 
-Weapon::Weapon(string n = "", string d = "", int i = 1, int atk = 0) {
+
+Weapon::Weapon(string n, string d, int i,int atk) {
     setName (n);
     setDesc (d);
-    setItemCount(1);
+    setItemCount(i);
     setAttack (atk);
 }
+
