@@ -3,7 +3,6 @@
 #include <string>
 #include "item.h"
 
-
 using namespace std;
 
 class Armor : public Item {

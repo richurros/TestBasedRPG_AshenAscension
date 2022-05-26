@@ -9,13 +9,22 @@
 using namespace std;
 
 class Bag : public Item {
-    private:
-	vector<Item> vBag;
+    public:
+	vector<Item *> vBag;
     public:
 	Item getItem(unsigned);
+	Bag(string n = "", string d = "", int i = 0) : Item(n, d, i) {
+		vBag = {};
+	}
+	~Bag() {
+		for (int i = 0; i < vBag.size(); ++i) {
+			delete vBag.at(i);
+		}
+		//vBag.clear();
+	}
         void printBag();
-	void addToBag(Item n);
-	void rmFromBag(Item n);
+	void addToBag(Item* n);
+	void rmFromBag(Item* n);
 };
 
 #endif //__BAG_H__

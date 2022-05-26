@@ -1,7 +1,10 @@
 #include "player.h"
-
 #include "item.h"
 using namespace std;
+
+Player::Player() {
+	type = "";
+}
 
 Player::Player(string playerClass, string name, int maxHealth, int atk, int defense, int spd, Weapon starterw, Armor startera, Room starter) : Character(name, maxHealth, atk, defense, spd) {
     Type = playerClass;
@@ -13,46 +16,46 @@ Player::Player(string playerClass, string name, int maxHealth, int atk, int defe
 }
 
 void Player::setType(string c) {
-    Type = c;
+	type = c;
 }
 
 void Player::printInv() {
-    for (int i = 0; i < this->vInventory.size(); i++) {
-        this->vInventory.at(i).print();
-    }
+	for (int i = 0; i < this->vInventory.size(); i++) {
+		this->vInventory.at(i)->print();
+	}
 }
 void Player::addToInv(Item n) {
-    if (this->vInventory.size() > 0) {
-        for (int i = 0; i < this->vInventory.size(); i++) {
-            if (n.getName() == this->vInventory.at(i).getName()) {
-                this->vInventory.at(i).setItemCount(this->vInventory.at(i).getItemCount() + n.getItemCount());
-                return;
-            }
-        }
-    }
-    this->vInventory.push_back(n);
+	if (this->vInventory.size() > 0) {
+		for (int i = 0; i < this->vInventory.size(); i++) {
+			if (n.getName() == this->vInventory.at(i).getName()) {
+				this->vInventory.at(i).setItemCount(this->vInventory.at(i).getItemCount() + n.getItemCount());
+				return;
+			}
+		}
+	}
+	this->vInventory.push_back(&n);
 }
 
 void Player::rmFromInv(Item n) {
-    if (this->vInventory.size() > 0) {
-        for (int i = 0; i < this->vInventory.size(); i++) {
-            if (n.getName() == this->vInventory.at(i).getName()) {
-                this->vInventory.at(i).setItemCount(this->vInventory.at(i).getItemCount() - n.getItemCount());
-                if (this->vInventory.at(i).getItemCount() == 0) {
-                    this->vInventory.erase(this->vInventory.begin() + i);
-                }
-                return;
-            }
-        }
-    }
+	if (this->vInventory.size() > 0) {
+		for (int i = 0; i < this->vInventory.size(); i++) {
+			if (n.getName() == this->vInventory.at(i).getName()) {
+				this->vInventory.at(i).setItemCount(this->vInventory.at(i).getItemCount() - n.getItemCount());
+				if (this->vInventory.at(i).getItemCount() == 0) {
+					this->vInventory.erase(this->vInventory.begin() + i);
+				}
+				return;
+			}
+		}
+	}
 }
 
 Item Player::getItem(unsigned n) {
-    if (n >= this->vInventory.size()) {
-        cout << "Invalid location, sending empty item" << endl;
-        return Item();
-    }
-    return this->vInventory.at(n);
+	if (n >= this->vInventory.size()) {
+		cout << "Invalid location, sending empty item" << endl;
+		return Item();
+	}
+	return this->vInventory.at(n);
 }
 
 void Player::eqWeapon(Weapon w) {
@@ -66,7 +69,9 @@ void Player::eqArmor(Armor a) {
     armorEq = a;
 }
 
-void Player::move() {
+void Player::move(Room r)
+{
+	location = r;
 }
 
 int Player::attack(Enemy x) {
@@ -86,4 +91,3 @@ int Player::attack(Enemy x) {
         return damageDone1;
     }
 }
-

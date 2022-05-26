@@ -36,4 +36,3 @@ public:
     Room getLocation() { return location; }
     int attack(Enemy x);
 };
-
