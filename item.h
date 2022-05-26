@@ -11,14 +11,16 @@ class Item {
 	string desc;
 	int itemCount;
     public:
-	//Item(string n = "", string d = "", int i = 0) { name = n; desc = d; itemCount = i;}
-        virtual void print() {
+	Item(string n = "", string d = "", int i = 0) { name = n; desc = d; itemCount = i;}
+        ~Item() {}
+	virtual void print() {
 		cout << getItemCount() << "x " << getName() << endl;
 		cout << "\t" <<  getDesc() << endl;
 	}
-	virtual string getName() { return name; }
-	virtual int getItemCount() { return itemCount; }
-	virtual string getDesc() { return desc; }
+	
+	virtual string getName() { return this->name; }
+	virtual int getItemCount() { return this->itemCount; }
+	virtual string getDesc() { return this->desc; }
 
 	virtual void setName(string s) { name = s; }
 	virtual void setItemCount(int i) { itemCount = i; }
