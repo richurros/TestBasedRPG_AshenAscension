@@ -25,8 +25,8 @@ Authors: Ronit Bhushan - (https://github.com/rbhus002); Malina Martinez - (https
      * Output during combat would be text that shows the health bar of both the enemies and the player, it shows the set of actions that user can do and its stats if the action has stats, and this output would reprint after every turn to update the health bars and etc. The output would also print out whether an attack was succesful or not.
      * Output outside of combat would basically be text that are descriptions in order to aid the user in visualising the game. After each action text would be written back in response to the user's choice. These descriptions would also help progress the player through the game.
     * The features of this game are that there will be multiple characters to choose from, each with different abilities, stats, flaws, and etc. that make them unique. The player will progres through the dungeon by finding their way to next level by using the hints they find in the world and by fighting various enemeies that they will encounter along the way. The combat system is a turned based combat system, and the player will have the choices to attack, use an item, or flee the battle. Depending on the plater and enemy stats, damage received and dealt will vary accordingly so the plater must strategize each and every turn in order to succeed. The player will have an inventory system that will hold all kinds of items. One type item would be potions that boost stats during battle. Other items would weapons and armor that increase the base stats that the user has so they are stronger in combat. Another type of item would be story relevant items where the item is necessary in order for the player to progress in the game (like a key to a door).
- 
- > ## Phase II
+
+  ## Phase II
 
  ## Class Diagram
  ![umlClassDiagram](uml.PNG)
@@ -76,22 +76,19 @@ Potion Class:
 - private attributes: attack, health, speed, defense (all act as buffing stats when used up by Player object)
 - usePotion() uses up Potion object in turn for a buff in whichever stat(s) the Potion object's attribute has a positive number for
  
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- > * Before the meeting you should perform a sprint plan like you did in Phase II.
- > * You should also update this README file by adding the following:
- >   * What design pattern(s) did you use? For each pattern you must explain in 4-5 sentences:
- >     * Why did you pick this pattern? And what feature did you implement with it?
- >     * How did the design pattern help you write better code?
- >   * An updated class diagram that reflects the design pattern(s) you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
- >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
-> 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+  ## Phase III
 
+  ## Update Class Diagram
+  ![umlClassDiagram2](UML_Diagram_Part3.png)
+
+New Edits to Class Diagram
+- Added a Bag class
+- Made Item Class a composite pattern
+- Added and Deleted some functions
+
+For this project, we used the composite design pattern for our Item class implementation. We knew that we would need a miniature inventory to access within combat itself so we made a composite Bag class, following the interface of component Item. With the component design pattern, it helps simplify our code for the composite and primitives as well as making it all more uniform and easy to comprehend. This way, when adding more primitives, the process of writing code improves as we shave off unnecessary time loss.
+
+	
  
  > ## Final deliverable
  > All group members will give a demo to the TA/reader during lab time. The TA/reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 

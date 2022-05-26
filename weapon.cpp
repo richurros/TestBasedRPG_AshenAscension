@@ -12,6 +12,7 @@ int Weapon::getAttack(){
     return attack;
 }
 
+
 Weapon::Weapon(string n, string d, int i,int atk) {
     setName (n);
     setDesc (d);

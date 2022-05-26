@@ -12,8 +12,8 @@ int Armor::getDefense() {
 }
 
 Armor::Armor(string n = "", string d = "", int i = 1, int df = 0) {
-    setName(n);
-    setDesc(d);
+    setName (n);
+    setDesc (d);
     setItemCount(i);
     setDefense(df);
 }
