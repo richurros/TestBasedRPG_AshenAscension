@@ -35,4 +35,5 @@ public:
     void move(Room r);
     Room getLocation() { return location; }
     int attack(Enemy x);
+    void usePotion(string potion);
 };

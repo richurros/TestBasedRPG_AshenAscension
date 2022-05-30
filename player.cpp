@@ -91,3 +91,24 @@ int Player::attack(Enemy x) {
         return damageDone1;
     }
 }
+
+void Player::usePotion(string potion) {
+        for (int i = 0; i < bInventory.vBag.size(); i++)
+        {
+                if (bInventory.vBag.at(i)->getName() == "Combat Pouch")
+                {
+                        for (int j = 0; j < bInventory.vBag.at(i).vBag.size(); i++)
+                        {
+                                if (potion.contains("Health") && bInventory.vBag.at(i).vBag.at(j)->getName() == potion)
+                                {
+                                        setDmgTaken(getDmgTaken()-bInventory.vBag.at(i).vBag.at(j)->getHealth());
+                                }
+                                else if (bInventory.vBag.at(i).vBag.at(j)->getName() == potion)
+                                {
+                                        setAtk(getAtkbInventory.vBag.at(i).vBag.at(j)->getAtk());
+                                        setDefense(getDefensebInventory.vBag.at(i).vBag.at(j)->getDefense());
+                                }
+                        }
+                }
+        }
+}
