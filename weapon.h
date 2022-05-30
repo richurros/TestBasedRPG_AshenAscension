@@ -7,11 +7,11 @@ using namespace std;
 
 class Weapon : public Item {
 public:
-    Weapon();
+    //Weapon();
     int getAttack();
     void setAttack(int atk);\
     Weapon(string n = "", string d = "", int i = 1, int atk = 0);
-
+    ~Weapon() { delete this; }
 private:
     int attack;
 };

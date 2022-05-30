@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 
 #include <iostream>
 #include <string> 
@@ -6,18 +6,24 @@ using namespace std;
 
 class Character
 {
-	private:
+	protected:
 		string name;
 		int maxHealth;
 		int atk;
-		int defense;
+		int def;
 		int spd;
 		int dmgTaken;
 		bool BoolDef;
 
 	public:
-		Character();
-		Character(string name, int maxHealth, int atk, int defense, int spd);
+		//Character();
+		Character(string name = "", int maxHealth = 100, int atk = 1, int defense = 1, int spd = 1) {
+			name = name;
+			maxHealth = maxHealth;
+			atk = atk;
+			def = defense;
+			spd = spd;
+		}
 		void setName(string name);
 		string getName() const { return name; }
 		void setMaxHealth(int maxHealth);
@@ -25,7 +31,7 @@ class Character
 		void setAtk(int atk);
 		int getAtk() const { return atk; }
 		void setDefense(int defense);
-		int getDefense() const { return defense; }
+		int getDefense() const { return def; }
 		void setSpd(int spd);
 		int getSpd() const { return spd; }
 		void setBoolDef(bool def);
