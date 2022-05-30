@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Character.h"
-#include "Player.h"
+#include "character.h"
+#include "player.h"
 
 using namespace std;
 
