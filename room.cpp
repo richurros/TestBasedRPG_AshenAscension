@@ -42,4 +42,3 @@ bool Room::validMove(string r) {
     }
     return false;
 }
-
