@@ -13,6 +13,11 @@ class Item {
 	int itemCount;
     public:
 	vector<Item *> vBag;
+	//Item() {
+		//name = "";
+		//desc = "";
+		//itemCount = 0;
+	//}
 	Item(string n = "", string d = "", int i = 0) { name = n; desc = d; itemCount = i; vBag = {};}
         ~Item() { cout << "deleted " << name << endl;}
 	virtual void print() {
@@ -33,12 +38,15 @@ class Item {
 	virtual void printBag() {};
 
 	virtual void setAttack(int atk) {};
-	virtual int getAttack() {};
+	virtual int getAttack() { return 0; }
+
+	virtual void setHealth(int health) {};
+	virtual int getHealth() { return 0; }
 	
 	virtual void setDefense(int def) {};
-        virtual int getDefense() {};
+    virtual int getDefense() { return 0; }
 
-	virtual vector<Item *> getBag() {};
+	virtual vector<Item*> getBag() { return vBag; }
 };
 
 #endif //__ITEM_H__

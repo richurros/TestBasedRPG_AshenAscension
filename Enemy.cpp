@@ -2,16 +2,17 @@
 
 using namespace std;
 
-Enemy::Enemy(string name, int maxHealth, int atk, int defense, int spd) : Character(name,maxHealth,atk,defense,spd) 
+Enemy::Enemy(string name, int maxHealth, int atk, int defense, int spd) : Character(name, maxHealth, atk, defense, spd) {}
 
-int Enemy::attack(Player &x)
+
+int Enemy::attack(Character &x)
 {
   if (x.getBoolDef() == true)
   {
     int damageDone = ((x.getDefense()/100)*this->getAtk()) - x.getDefense();
     if (damageDone > 0)
     {
-      x.setDmgTaken(damgeDone+x.getDmgTaken());
+      x.setDmgTaken(damageDone+x.getDmgTaken());
       x.setBoolDef(false);
       return damageDone;
     }

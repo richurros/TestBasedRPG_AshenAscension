@@ -38,4 +38,3 @@ public:
     void setConnectedRoom(string r);
     bool validMove(string r);
 };
-

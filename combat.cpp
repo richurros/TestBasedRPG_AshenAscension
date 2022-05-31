@@ -1,26 +1,28 @@
-#include <iostream> //input and output
+
+#include "combat.h"
+/*#include <iostream> //input and output
 #include <stdlib.h> //srand and rand
 #include <time.h> //time
 #include "Player.h"
 #include "Enemy.h"
 #include "Character.h"
 #include "SlowPrints.h"
-#include "DeathPrint.h"
+#include "DeathPrint.h"*/
 
 void combat(Player x, Enemy y)
 {
-	slowStringPrint(x.getName() + " has engaged in combat with " + y.getName() + ".\n");
+	slowStringPrint(x.getName() + " has engaged in combat with " + y.getName() + ".\n", "");
 	
 	bool plyF = true;  //boolean that determines if the player goes first or not
 
 	if (x.getSpd() >= y.getSpd())
 	{
-		slowStringPrint(x.getName() + " quick to action, makes the first move!\n");
+		slowStringPrint(x.getName() + " quick to action, makes the first move!\n", "");
 	}
 	else
 	{
 		plyF = false;
-		slowStringPrint(y.getName() + " is quicker, and makes the first move!\n");
+		slowStringPrint(y.getName() + " is quicker, and makes the first move!\n", "");
 	}
 	
 	//^code that decides who goes first
@@ -48,18 +50,20 @@ void combat(Player x, Enemy y)
 		{
 	
 			cout << x.getName() << "'s Health: " << (x.getMaxHealth() - x.getDmgTaken()) << endl;
-			cout << "Combat Points Left: " << turnPoint << " / " << x.getcombatPt() << endl
+			cout << "Combat Points Left: " << turnPoint << " / " << x.getcombatPt() << endl;
 			cout << "	Options:" << endl;
 			cout << "	1. Attack" << endl;
 			cout << " 	2. Defend" << endl;
 			cout << "	3. Show Combat Pouch" << endl;
 			cout << "	4. Use a Combat Item" << endl;
 			
-			char input;
+			//char input;
+			string input;
+			getline(cin, input);
 
 			INPUT:
 			
-			cin >> input;
+			//cin >> input;
 			
 			if (input == "1")
 			{
@@ -73,7 +77,7 @@ void combat(Player x, Enemy y)
 			else if (input == "2")
 			{
 				cout << endl;
-				cout << x.getName() << " defends himself." << endl
+				cout << x.getName() << " defends himself." << endl;
 				cout << endl;
 				x.setBoolDef(true);
 				turnPoint--;
@@ -81,11 +85,11 @@ void combat(Player x, Enemy y)
 			}
 			else if (input == "3")
 			{
-				for (int i = 0; i < x.bInventory.size(); i++)
+				for (int i = 0; i < x.bInventory->vBag.size(); i++)
 				{
-					if (x.bInventory.at(i).getName() == "Combat Pouch")
+					if (x.bInventory->vBag.at(i)->getName() == "Combat Pouch")
 					{
-						x.bInventory.at(i)->printBag();
+						x.bInventory->vBag.at(i)->printBag();
 					}
 				}
 			}
@@ -102,19 +106,20 @@ void combat(Player x, Enemy y)
 					cout << "Please enter what item you would like to use?" << endl;
 					cin >> itemName;
 					turnPoint--;
-					x.usePotion(string itemName);
+					//x.usePotion(string itemName);
+					x.usePotion(itemName);
 				}
 			}
 			else
 			{
 				cout << "Invalid: Please type in one of the numbers given" << endl;
-				goto INTPUT;
+				goto INPUT;
 			}
 		}
                         
 		if (y.getBoolDef() == true)
 		{
-			setBoolDef(false);
+			y.setBoolDef(false);
 		}
 			
 		int randNum = 0;
@@ -131,7 +136,7 @@ void combat(Player x, Enemy y)
 		else if (randNum == 1)
 		{
 			 cout << endl;
-                         cout << x.getName() << " defends himself." << endl
+                         cout << x.getName() << " defends himself." << endl;
                          cout << endl;
                          x.setBoolDef(true);
 		}
@@ -139,7 +144,7 @@ void combat(Player x, Enemy y)
     		x.setDefense(temp_defense);
 	}
 
-	if (x.getDmgTaken > x.getMaxHealth)
+	if (x.getDmgTaken() > x.getMaxHealth())
   	{
     		cout << x.getName() << "lost against " << y.getName() << "." << endl;
     		DeathPrint("ASCENSION ENDED\n");
