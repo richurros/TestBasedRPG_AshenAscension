@@ -5,6 +5,6 @@
 
 using namespace std;
 
-string AskForName();
-string AskForType(string name);
-Player GeneratePlayer();
+void GeneratePlayer(Player& p);
+void AskForName(Player& p);
+void AskForType(Player& p);
