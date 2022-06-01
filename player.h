@@ -42,6 +42,6 @@ public:
     void eqArmor(Armor a);
     void move(Room r);
     Room getLocation() { return location; }
-    int attack(Character& x);
-    void usePotion(string potion);
+    //int attack(Character& x);
+    //void usePotion(string potion);
 };
