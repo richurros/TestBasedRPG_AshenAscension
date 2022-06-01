@@ -19,7 +19,7 @@ class Item {
 		//itemCount = 0;
 	//}
 	Item(string n = "", string d = "", int i = 0) { name = n; desc = d; itemCount = i; vBag = {};}
-        ~Item() { cout << "deleted " << name << endl;}
+        virtual ~Item() { cout << "deleted " << name << endl;}
 	virtual void print() {
 		cout << getItemCount() << "x " << getName() << endl;
 		cout << "\t~" <<  getDesc() << endl;
@@ -44,7 +44,7 @@ class Item {
 	virtual int getHealth() { return 0; }
 	
 	virtual void setDefense(int def) {};
-    virtual int getDefense() { return 0; }
+    	virtual int getDefense() { return 0; }
 
 	virtual vector<Item*> getBag() { return vBag; }
 };

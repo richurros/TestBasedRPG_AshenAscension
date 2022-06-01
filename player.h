@@ -8,7 +8,7 @@
 #include "armor.h"
 #include "weapon.h"
 #include "room.h"
-//#include "Enemy.h"
+#include "Enemy.h"
 
 using namespace std;
 

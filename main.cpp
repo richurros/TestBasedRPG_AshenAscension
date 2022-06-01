@@ -6,7 +6,7 @@
 #include "weapon.h"
 #include "armor.h"
 #include "player.h"
-
+#include "room.h"
 int main() {
 	
 	//CURRENT ISSUE: Everything in this file compiles fine, however there is a memory leak when adding Bag b2 into Bag b1
