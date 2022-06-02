@@ -33,7 +33,7 @@ void Player::move(Room r)
 
 int Player::attack(Character& x) {
     if (x.getBoolDef() == true) {
-        int damageDone = ((int)(((40 - x.getDefense()) / 40.0) * this->getAtk())) - x.getDefense();
+        int damageDone = ((int)(((50 - x.getDefense()) / 50.0) * (2*this->getAtk()))) - x.getDefense();
         if (damageDone > 0) {
             x.setDmgTaken(damageDone + x.getDmgTaken());
             x.setBoolDef(false);
@@ -43,7 +43,7 @@ int Player::attack(Character& x) {
             return 0;
         }
     } else {
-        int damageDone1 = ((int)(((40 - x.getDefense()) / 40.0) * this->getAtk()));
+        int damageDone1 = ((int)(((50 - x.getDefense()) / 50.0) * (2*this->getAtk())));
         x.setDmgTaken(damageDone1 + x.getDmgTaken());
         return damageDone1;
     }
@@ -52,11 +52,11 @@ int Player::attack(Character& x) {
 void Player::usePotion(string potion) {
         for (int i = 0; i < bInventory->vBag.size(); i++)
         {
-                if (bInventory->vBag.at(i)->getName() == "Combat Pouch")
+                if (bInventory->vBag.at(i)->getName() == "Combat Potion Pouch")
                 {
                         for (int j = 0; j < bInventory->vBag.at(i)->vBag.size(); i++)
                         {
-                                if (potion.find("Health") && bInventory->vBag.at(i)->vBag.at(j)->getName() == potion)
+                                if (potion.find("Healing") && bInventory->vBag.at(i)->vBag.at(j)->getName() == potion)
                                 {
                                         setDmgTaken(getDmgTaken()-bInventory->vBag.at(i)->vBag.at(j)->getHealth());
                                 }
