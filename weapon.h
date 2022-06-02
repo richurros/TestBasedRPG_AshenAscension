@@ -16,7 +16,8 @@ public:
         setItemCount(i);
         setAttack(atk);
     
-    };
+    }
+    ~Weapon() {} 
 private:
     int attack;
 };
