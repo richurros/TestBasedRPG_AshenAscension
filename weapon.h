@@ -17,7 +17,6 @@ public:
         setAttack(atk);
     
     };
-    ~Weapon() { }
 private:
     int attack;
 };

@@ -16,7 +16,6 @@ public:
         setItemCount(i);
         setDefense(df);
     };
-    ~Armor() { }
 private:
     int defense;
 

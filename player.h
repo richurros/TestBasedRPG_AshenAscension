@@ -7,8 +7,9 @@
 #include "bag.h"
 #include "armor.h"
 #include "weapon.h"
+#include "potion.h"
 #include "room.h"
-//#include "Enemy.h"
+#include "Enemy.h"
 
 using namespace std;
 
@@ -24,25 +25,25 @@ public:
     Bag* bInventory;
     Player();
     ~Player() {
-	if (weaponEq != nullptr) {
-		delete weaponEq;
-	}
-	if (armorEq != nullptr) {
-		delete armorEq;
-	}
+	//if (weaponEq != nullptr) {
+		//delete weaponEq;
+	//}
+	//if (armorEq != nullptr) {
+		//delete armorEq;
+	//}
 	
-	//delete *bInventory;
 	delete bInventory;
 	cout << "Deleted player" << endl;
     }
-    Player(string type, string name, int maxHealth, int atk, int defense, int spd, Weapon* starterw, Armor* startera, Room starter);
+    //Player(string type, string name, int maxHealth, int atk, int defense, int spd, Weapon* starterw, Armor* startera, Room starter);
     void setType(string playerClass);
     string getType() { return type; }
     int getcombatPt() { return combatPt; }
-    void eqWeapon(Weapon* w);
-    void eqArmor(Armor* a);
+    void setCombatPt(int c);
+    void eqWeapon(Weapon w);
+    void eqArmor(Armor a);
     void move(Room r);
     Room getLocation() { return location; }
-    int attack(Enemy x);
-    void usePotion(string potion);
+    //int attack(Character& x);
+    //void usePotion(string potion);
 };

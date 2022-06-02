@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 
 #include <iostream>
 #include <string> 
@@ -24,6 +24,7 @@ class Character
 			def = defense;
 			spd = spd;
 		}
+		//Character(string name, int maxHealth, int atk, int defense, int spd);
 		void setName(string name);
 		string getName() const { return name; }
 		void setMaxHealth(int maxHealth);
@@ -37,6 +38,6 @@ class Character
 		void setBoolDef(bool def);
 		int getBoolDef() const { return BoolDef; }
 		void setDmgTaken(int d);
-		int getDmgtaken() const { return dmgTaken; }
+		int getDmgTaken() const { return dmgTaken; }
 };
 

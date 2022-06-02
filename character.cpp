@@ -5,7 +5,7 @@ void Character::setAtk(int a) {
 }
 
 void Character::setDefense(int d) {
-	defense = d;
+	def = d;
 }
 
 void Character::setSpd(int s) {
