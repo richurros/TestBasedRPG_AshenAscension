@@ -31,14 +31,12 @@ int main()
         else if (input == "LOOK AROUND") {
             cout << "         ";
             slowStringPrint(p.getLocation().getDescription(), "         ");
-            if (p.getLocation().getItemsAvailable() != "") {
+            if (!(p.getLocation().getItemStatus())) {
                 cout << "\n         ";
                 slowStringPrint(p.getLocation().getItemsAvailable(), "         ");
             }
-            else if (p.getLocation().getNPCsAvailable() != "") {
                 cout << "\n         ";
                 slowStringPrint(p.getLocation().getNPCsAvailable(), "         ");
-            }
             cout << "\n         ";
             slowStringPrint(p.getLocation().getLocationsAvailable(), "         ");
             cout << endl;
@@ -67,9 +65,26 @@ int main()
         }
         else if (input.find("PICK UP ") == 0) {
             itemToPickUp = input.substr(8);
+            if (p.getLocation().getItemName()==itemToPickUp) {
+                if (!(p.getLocation().getItemStatus())) {
+                    for (int i = 0; i < p.getLocation().getNumOfItemsInRoom(); ++i) {
+                        p.bInventory->addToBag(p.getLocation().bInventory->vBag.at(i));
+                        cout << "Picked up a thing\n";
+                    }
+                    bool ItemsPickedUp = true;
+                    //p.getLocation().setItemStatus(ItemsPickedUp);
+                    p.getLocation()
+                    cout << "Item Taken: " << p.getLocation().getItemStatus();
+                    //if (p.getLocation().getItemStatus()) { cout << "Item WAS taken!\n"; }
+                }
+                else { cout << "You already picked that up!\n"; }
+            }
+            else {
+                cout << "Not a recognized item\n";
+            }
         }
         else if (input == "BACKPACK") {
-
+            p.bInventory->printBag();
 
         }
         else {

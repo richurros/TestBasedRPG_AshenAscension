@@ -17,6 +17,10 @@ Player::Player() {
     //location = starter;
 //}
 
+void Player::setCombatPt(int c) {
+    combatPt = c;
+}
+
 void Player::setType(string c) {
 	type = c;
 }
