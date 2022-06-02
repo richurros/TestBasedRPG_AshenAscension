@@ -17,7 +17,6 @@ ADD_EXECUTABLE(ascend
 	weapon.cpp
 	armor.cpp
 	DeathPrint.cpp
-	GameSekeleton.cpp
 	character.cpp
 	combat.cpp
 	generatePlayer.cpp

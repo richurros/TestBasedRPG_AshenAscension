@@ -8,4 +8,4 @@
 #include "slowPrints.h"
 #include "DeathPrint.h"
 
-bool combat(Player x, Enemy y);
+bool combat(Player &x, Enemy &y);
