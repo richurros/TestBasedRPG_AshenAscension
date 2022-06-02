@@ -18,11 +18,6 @@ class Bag : public Item {
 	}
 	~Bag() {
 		for ( int i = 0; i < vBag.size(); ++i ) {
-			if (vBag.at(i)->getName().find("Bag") != string::npos) {
-				for (int j = 0; j < vBag.at(i)->getBag().size(); ++j) {
-					delete vBag.at(i)->getBag().at(j);
-				}
-			}
 			delete vBag.at(i);
 		}
 	}

@@ -9,7 +9,7 @@
 #include "weapon.h"
 #include "potion.h"
 #include "room.h"
-//#include "Enemy.h"
+#include "Enemy.h"
 
 using namespace std;
 
@@ -44,6 +44,6 @@ public:
     void eqArmor(Armor a);
     void move(Room r);
     Room getLocation() { return location; }
-    int attack(Character& x);
-    void usePotion(string potion);
+    //int attack(Character& x);
+    //void usePotion(string potion);
 };
