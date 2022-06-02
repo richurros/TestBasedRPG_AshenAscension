@@ -1,15 +1,15 @@
 
 #include "combat.h"
-/*#include <iostream> //input and output
+#include <iostream> //input and output
 #include <stdlib.h> //srand and rand
 #include <time.h> //time
 #include "Player.h"
 #include "Enemy.h"
 #include "Character.h"
 #include "SlowPrints.h"
-#include "DeathPrint.h"*/
+#include "DeathPrint.h"
 
-void combat(Player x, Enemy y)
+void combat(Player &x, Enemy &y)
 {
 	slowStringPrint(x.getName() + " has engaged in combat with " + y.getName() + ".\n", "");
 	
@@ -50,6 +50,7 @@ void combat(Player x, Enemy y)
 		{
 	
 			cout << x.getName() << "'s Health: " << (x.getMaxHealth() - x.getDmgTaken()) << endl;
+			cout << y.getName() << "'s Health: " << (y.getMaxHealth() - y.getDmgTaken()) << endl;
 			cout << "Combat Points Left: " << turnPoint << " / " << x.getcombatPt() << endl;
 			cout << "	Options:" << endl;
 			cout << "	1. Attack" << endl;
@@ -124,16 +125,16 @@ void combat(Player x, Enemy y)
 			
 		int randNum = 0;
 		srand (time(NULL));
-		randNum = rand() % 2;
+		randNum = rand() % 3;
 			
-		if (randNum == 0)
+		if (randNum == 0 || randNum == 1)
 		{
 			cout << endl;
                 	cout << y.getName() << " attacks " << x.getName() << "." << endl;
                		cout << y.getName() << "did " << y.attack(x) << " damage to " << x.getName() << "." << endl;
                 	cout << endl;
 		}
-		else if (randNum == 1)
+		else if (randNum == 2)
 		{
 			 cout << endl;
                          cout << x.getName() << " defends himself." << endl;
@@ -148,13 +149,14 @@ void combat(Player x, Enemy y)
   	{
     		cout << x.getName() << "lost against " << y.getName() << "." << endl;
     		DeathPrint("ASCENSION ENDED\n");
-    		exit(-1);
+    		return false;
   	}
   	else
   	{
     		cout << x.getName() << "won against " << y.getName() << "." << endl;
     		cout << x.getName() << "'s Health has been reset to full.'" << endl;
     		x.setDmgTaken(0);
+		return true;
   	}
 	
 }

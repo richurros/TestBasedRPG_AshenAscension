@@ -9,7 +9,7 @@ int Enemy::attack(Character &x)
 {
   if (x.getBoolDef() == true)
   {
-    int damageDone = ((x.getDefense()/100)*this->getAtk()) - x.getDefense();
+    int damageDone = ((int)(((40 - x.getDefense()) / 40.0) * this->getAtk())) - x.getDefense();
     if (damageDone > 0)
     {
       x.setDmgTaken(damageDone+x.getDmgTaken());
@@ -24,7 +24,7 @@ int Enemy::attack(Character &x)
   }
   else
   {
-    int damageDone1 = ((x.getDefense()/100)*this->getAtk());
+    int damageDone1 = ((int)(((40 - x.getDefense()) / 40.0) * this->getAtk()));
     x.setDmgTaken(damageDone1+x.getDmgTaken());
     return damageDone1;
   }
