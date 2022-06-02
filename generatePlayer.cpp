@@ -70,7 +70,7 @@ void DefaultItems(Player& p) {
     Armor* a1 = new Armor("Light Armor (Armor)", "Not the best protection, but it is better than being naked.\n          +5 Defense Power", 1, 5);
     p.bInventory->addToBag(a1);
     Bag* b2 = new Bag("Combat Potion Pouch (Bag)", "Holds all of the potions I can use in battle", 1);
-    Potion* p1 = new Potion("Potion of Greater Healing", "Heals for 50 points of HP", 1, 0, 0, 50);
+    Potion* p1 = new Potion("Potion of Greater Healing", "Heals for 50 points of HP", 1, 1, 1, 50);
     b2->addToBag(p1);
     p.bInventory->addToBag(b2);
     p.bInventory->printBag();
