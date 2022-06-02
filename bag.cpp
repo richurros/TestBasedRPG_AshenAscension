@@ -23,8 +23,8 @@ void Bag::addToBag(Item* n) {
                         }
                 }
         }
-	Item* temp = n;
-	this->vBag.push_back(temp);
+	//Item* temp = n;
+	this->vBag.push_back(n);
 	cout << "Added " << n->getName() << " to " << this->getName() << endl;
 }
 

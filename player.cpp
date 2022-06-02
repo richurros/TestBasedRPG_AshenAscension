@@ -38,7 +38,7 @@ void Player::move(Room r)
 	location = r;
 }
 
-int Player::attack(Character& x) {
+/*int Player::attack(Character& x) {
     if (x.getBoolDef() == true) {
         int damageDone = ((x.getDefense() / 100) * this->getAtk()) - x.getDefense();
         if (damageDone > 0) {
@@ -54,9 +54,9 @@ int Player::attack(Character& x) {
         x.setDmgTaken(damageDone1 + x.getDmgTaken());
         return damageDone1;
     }
-}
+} */
 
-void Player::usePotion(string potion) {
+/*void Player::usePotion(string potion) {
         for (int i = 0; i < bInventory->vBag.size(); i++)
         {
                 if (bInventory->vBag.at(i)->getName() == "Combat Pouch")
@@ -75,4 +75,4 @@ void Player::usePotion(string potion) {
                         }
                 }
       }
-}
+}*/
