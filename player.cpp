@@ -4,18 +4,7 @@ using namespace std;
 
 Player::Player() {
 	type = "";
-	//weaponEq = nullptr;
-	//armorEq = nullptr;
 }
-
-//Player::Player(string playerClass, string name, int maxHealth, int atk, int defense, int spd, Weapon* starterw, Armor* startera, Room starter) : Character(name, maxHealth, atk, defense, spd) {
-    //type = playerClass;
-    //string locationName = "";
-    //combatPt = spd;
-    //weaponEq = starterw;
-    //armorEq = startera;
-    //location = starter;
-//}
 
 void Player::setCombatPt(int c) {
     combatPt = c;
@@ -42,7 +31,7 @@ void Player::move(Room r)
 	location = r;
 }
 
-/*int Player::attack(Character& x) {
+int Player::attack(Character& x) {
     if (x.getBoolDef() == true) {
         int damageDone = ((x.getDefense() / 100) * this->getAtk()) - x.getDefense();
         if (damageDone > 0) {
@@ -58,9 +47,9 @@ void Player::move(Room r)
         x.setDmgTaken(damageDone1 + x.getDmgTaken());
         return damageDone1;
     }
-} */
+} 
 
-/*void Player::usePotion(string potion) {
+void Player::usePotion(string potion) {
         for (int i = 0; i < bInventory->vBag.size(); i++)
         {
                 if (bInventory->vBag.at(i)->getName() == "Combat Pouch")
@@ -79,4 +68,4 @@ void Player::move(Room r)
                         }
                 }
       }
-}*/
+}

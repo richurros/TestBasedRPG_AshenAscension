@@ -13,11 +13,6 @@ class Item {
 	int itemCount;
     public:
 	vector<Item *> vBag;
-	//Item() {
-		//name = "";
-		//desc = "";
-		//itemCount = 0;
-	//}
 	Item(string n = "", string d = "", int i = 0) { name = n; desc = d; itemCount = i; vBag = {};}
         virtual ~Item() { cout << "deleted " << name << endl;}
 	virtual void print() {
