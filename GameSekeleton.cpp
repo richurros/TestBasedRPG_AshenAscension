@@ -1,7 +1,8 @@
-#include "GeneratePlayer.h"
+#include "generatePlayer.h"
 #include "player.h"
 #include "slowPrints.h"
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main()
@@ -70,3 +71,4 @@ int main()
 			}
 		}
 	}
+}

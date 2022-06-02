@@ -1,4 +1,4 @@
-#include "GeneratePlayer.h"
+#include "generatePlayer.h"
 #include "generateRooms.h"
 #include "combat.h"
 #include "Enemy.h"
@@ -7,6 +7,7 @@
 #include "sample.h"
 #include "bag.h"
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main()
@@ -73,7 +74,7 @@ int main()
                     }
                     bool ItemsPickedUp = true;
                     //p.getLocation().setItemStatus(ItemsPickedUp);
-                    p.getLocation()
+                    p.getLocation();
                     cout << "Item Taken: " << p.getLocation().getItemStatus();
                     //if (p.getLocation().getItemStatus()) { cout << "Item WAS taken!\n"; }
                 }

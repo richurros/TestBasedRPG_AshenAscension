@@ -81,7 +81,7 @@ int main() {
 	//Print a2's unique attribute (Defense value)
 	cout << a2->getName() << "'s defense stat: " << a2->getDefense() << endl << endl;
 	
-        //delete p1.bInventory;
+        delete p1.bInventory;
 	//delete b2;
 	
 	//delete p1;

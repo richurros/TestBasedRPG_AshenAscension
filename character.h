@@ -17,13 +17,7 @@ class Character
 
 	public:
 		Character();
-		Character(string name = "", int maxHealth = 100, int atk = 1, int defense = 1, int spd = 1) {
-			name = name;
-			maxHealth = maxHealth;
-			atk = atk;
-			def = defense;
-			spd = spd;
-		}
+		Character(string name, int maxHealth, int atk, int defense, int spd);
 		void setName(string name);
 		string getName() const { return name; }
 		void setMaxHealth(int maxHealth);
