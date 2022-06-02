@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string> 
 #include <vector>
+#include "bag.h"
 using namespace std;
 
 class Room
@@ -15,13 +16,15 @@ private:
     string locationsAvailable;
     string itemsAvailable;
     string itemName;
-    bool itemsTaken;
+    //bool itemsTaken;
+    int numOfItems;
     vector<string> connectedRooms;
-
-
+    
 public:
+    Bag* bInventory;
+    bool itemsTaken;
     Room();
-    Room(string name, string description, string NPCsAvailable, string locationsAvailable, string NPCDialogue, string NPCName, string Items, string ItemName);
+    Room(string name, string description, string NPCsAvailable, string locationsAvailable, string NPCDialogue, string NPCName, string Items, string ItemName, int numOfItems);
     string getName() { return name; }
     void setName(string name);
     string getDescription() { return description; }
@@ -37,4 +40,5 @@ public:
     void setConnectedRooms(vector<string> cr);
     void setConnectedRoom(string r);
     bool validMove(string r);
+    int getNumOfItemsInRoom() { return numOfItems; }
 };

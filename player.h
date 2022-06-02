@@ -7,6 +7,7 @@
 #include "bag.h"
 #include "armor.h"
 #include "weapon.h"
+#include "potion.h"
 #include "room.h"
 //#include "Enemy.h"
 
@@ -38,6 +39,7 @@ public:
     void setType(string playerClass);
     string getType() { return type; }
     int getcombatPt() { return combatPt; }
+    void setCombatPt(int c);
     void eqWeapon(Weapon w);
     void eqArmor(Armor a);
     void move(Room r);

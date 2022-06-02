@@ -41,6 +41,9 @@ void AskForType(Player& p) {
             p.setDefense(10);
             p.setSpd(5);
             p.setMaxHealth(150);
+            p.setCombatPt(1 + p.getSpd() / 5);
+            //cout <<"speed: " << p.getSpd() << endl;
+            
         }
         else if (type == "SPEEDSTER") {
             p.setAtk(15);
@@ -60,7 +63,21 @@ void AskForType(Player& p) {
     }
 }
 
+void DefaultItems(Player& p) {
+    Weapon* w1 = new Weapon("Sword (Weapon)", "It looks like it has never been used before, but its blade doesn't seem very sharp.\n          +20 Attack Power", 1, 20);
+    p.bInventory = new Bag("Combat Pouch (Bag)", "Bag Desc", 1);
+    p.bInventory->addToBag(w1);
+    Armor* a1 = new Armor("Light Armor (Armor)", "Not the best protection, but it is better than being naked.\n          +20 Defense Power", 1, 20);
+    p.bInventory->addToBag(a1);
+    Bag* b2 = new Bag("Combat Potion Pouch (Bag)", "Holds all of the potions I can use in battle", 1);
+    Potion* p1 = new Potion("Potion of Greater Healing", "Heals for 50 points of HP", 1, 0, 0, 50);
+    b2->addToBag(p1);
+    p.bInventory->addToBag(b2);
+    p.bInventory->printBag();
+}
+
 void GeneratePlayer(Player& p) {
     AskForName(p);
     AskForType(p);
+    DefaultItems(p);
 }

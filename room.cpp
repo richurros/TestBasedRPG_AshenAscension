@@ -6,7 +6,7 @@ Room::Room() {
     name = "";
 }
 
-Room::Room(string n, string d, string NPCA, string locA, string npcD, string npcN, string i, string iN) {
+Room::Room(string n, string d, string NPCA, string locA, string npcD, string npcN, string i, string iN, int NumOfItems) {
     name = n;
     description = d;
     NPCDialogue = npcD;
@@ -15,10 +15,13 @@ Room::Room(string n, string d, string NPCA, string locA, string npcD, string npc
     locationsAvailable = locA;
     itemsAvailable = i;
     itemName = iN;
+    numOfItems = NumOfItems;
+    itemsTaken = false;
 }
 
 void Room::setItemStatus(bool b) {
     itemsTaken = b;
+    cout << "b: " << getItemStatus();
 }
 void Room::setName(string n) {
     name = n;
