@@ -55,7 +55,7 @@ void combat(Player &x, Enemy &y)
 			cout << "	Options:" << endl;
 			cout << "	1. Attack" << endl;
 			cout << " 	2. Defend" << endl;
-			cout << "	3. Show Combat Pouch" << endl;
+			cout << "	3. Show Combat Potion Pouch" << endl;
 			cout << "	4. Use a Combat Item" << endl;
 			
 			//char input;
@@ -88,7 +88,7 @@ void combat(Player &x, Enemy &y)
 			{
 				for (int i = 0; i < x.bInventory->vBag.size(); i++)
 				{
-					if (x.bInventory->vBag.at(i)->getName() == "Combat Pouch")
+					if (x.bInventory->vBag.at(i)->getName() == "Combat Potion Pouch (Bag)")
 					{
 						x.bInventory->vBag.at(i)->printBag();
 					}

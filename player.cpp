@@ -52,7 +52,7 @@ int Player::attack(Character& x) {
 void Player::usePotion(string potion) {
         for (int i = 0; i < bInventory->vBag.size(); i++)
         {
-                if (bInventory->vBag.at(i)->getName() == "Combat Potion Pouch")
+                if (bInventory->vBag.at(i)->getName() == "Combat Potion Pouch (Bag)")
                 {
                         for (int j = 0; j < bInventory->vBag.at(i)->vBag.size(); i++)
                         {
