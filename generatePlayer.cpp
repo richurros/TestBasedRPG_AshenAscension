@@ -2,7 +2,7 @@
 #include <regex>
 #include "player.h"
 #include "slowPrints.h"
-#include "GeneratePlayer.h"
+#include "generatePlayer.h"
 
 #include <chrono>
 #include <thread>

@@ -14,7 +14,7 @@ class Item {
     public:
 	vector<Item *> vBag;
 	Item(string n = "", string d = "", int i = 0) { name = n; desc = d; itemCount = i; vBag = {};}
-        virtual ~Item() { cout << "deleted " << name << endl;}
+        virtual ~Item() { }
 	virtual void print() {
 		cout << getItemCount() << "x " << getName() << endl;
 		cout << "\t~" <<  getDesc() << endl;
