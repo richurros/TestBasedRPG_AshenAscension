@@ -68,7 +68,7 @@ bool Player::usePotion(string potion) {
                 {
                         for (int j = 0; j < bInventory->vBag.at(i)->vBag.size(); i++)
                         {
-                                if (potion.find("Healing") != string::npos && bInventory->vBag.at(i)->vBag.at(j)->getName() == potion)
+                                if (bInventory->vBag.at(i)->vBag.at(j)->getName() == potion && (potion == "Potion of Healing" || potion == "Potion of Greater Healing"))
                                 {
                                         setDmgTaken(getDmgTaken()-bInventory->vBag.at(i)->vBag.at(j)->getHealth());
 					if (getDmgTaken() < 0)
