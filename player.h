@@ -14,18 +14,17 @@ using namespace std;
 
 class Player : public Character {
 private:
-    int weaponEq;
-    int armorEq;
-    string type;
+    int weaponEq = 0;
+    int armorEq = 0;
+    string type = "";
     Room location;
-    int combatPt;
+    int combatPt = 0;
 
 public:
-    Bag* bInventory;
+    Bag* bInventory = {};
     Player();
     ~Player() {
-	
-	delete bInventory;
+		delete bInventory;
     }
     
     void setType(string playerClass);

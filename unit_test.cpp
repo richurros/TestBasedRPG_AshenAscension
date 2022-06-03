@@ -24,7 +24,7 @@
 #include "potion_test.h"
 #include "Enemy_test.h"
 #include "room_test.h"
-
+#include "player_test.h"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
