@@ -13,6 +13,10 @@
 #include "character.cpp"
 #include "Enemy.h"
 #include "Enemy.cpp"
+#include "player.h"
+#include "player.cpp"
+#include "room.h"
+#include "room.cpp"
 
 #include "weapon_test.h"
 #include "armor_test.h"
