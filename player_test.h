@@ -168,5 +168,28 @@ TEST(PlayerTest, GetAndSetType) {
     delete player;
 }
 
+TEST(PlayerTest, PlayerBag) {
+    Player* player = new Player();
+    player->bInventory = new Bag("Bag 1 (Bag)", "Bag 1 Desc", 1);
+    Bag* b2 = new Bag("Bag 2 (Bag)", "Bag 2 Desc", 1);
+    Armor* a1 = new Armor("Sample Shield (Armor)", "Desc", 5, 20);
+    b2->addToBag(a1);
+    player->bInventory->addToBag(b2);
+
+    EXPECT_EQ(player->bInventory->vBag.at(0)->getBag().at(0)->getName(), "Sample Shield (Armor)");
+    EXPECT_EQ(player->bInventory->vBag.at(0)->getBag().at(0)->getDesc(), "Desc");
+    EXPECT_EQ(player->bInventory->vBag.at(0)->getBag().at(0)->getItemCount(), 5);
+    EXPECT_EQ(player->bInventory->vBag.at(0)->getBag().at(0)->getDefense(), 20);
+    delete player;
+}
+
+TEST(PlayerTest, SetAndGetLocation) {
+    Player* player = new Player();
+    Room r1("Room 1", "Room 1 desc", "NPC1", "Forest, Town", "Dialogue", "Ted", "Sword", "Good Sword", 4);
+    player->move(r1);
+    EXPECT_EQ(player->getLocation().getName(), "Room 1");
+    delete player;
+}
+
 #endif
 
