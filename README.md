@@ -108,6 +108,8 @@ For this project, we used the composite design pattern for our Item class implem
 - Terminal on puTTY Installation/Usage Guide
 ![p1](PUTTY1.png)
 ![p3](PUTTY3.png)
+- Once you load the game, wait for the dialogue to finish. Using context clues (or simply the command HELP), you can venture through by using commands such as MOVE TO, TALK, LOOK AROUND, and PICK UP for when you find an item. To end the game, simply type STOP after the character building portion. For further details on command usage, type HELP after you've created your character.
+
  ## Testing
 - Overall our whole project was tested and validated through unit tests on our classes, testing focused around on each member's respective parts, and through extensive review on each other's work. Also cooperation, meeting up, working at the same time, and communication lead us to have a better time putting our respective works together.
  
