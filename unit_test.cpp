@@ -5,9 +5,12 @@
 #include "weapon.cpp"
 #include "armor.h"
 #include "armor.cpp"
+#include "potion.h"
+#include "potion.cpp"
 
 #include "weapon_test.h"
 #include "armor_test.h"
+#include "potion_test.h"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

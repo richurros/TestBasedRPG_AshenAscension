@@ -4,7 +4,6 @@
 #include "Enemy.h"
 #include "player.h"
 #include "slowPrints.h"
-#include "sample.h"
 #include "bag.h"
 #include <iostream>
 #include <climits>
