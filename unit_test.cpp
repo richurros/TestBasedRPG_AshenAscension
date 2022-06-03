@@ -9,11 +9,16 @@
 #include "potion.cpp"
 #include "bag.h"
 #include "bag.cpp"
+#include "character.h"
+#include "character.cpp"
+#include "Enemy.h"
+#include "Enemy.cpp"
 
 #include "weapon_test.h"
 #include "armor_test.h"
 #include "bag_test.h"
 #include "potion_test.h"
+#include "Enemy_test.h"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
