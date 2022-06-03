@@ -23,6 +23,8 @@
 #include "bag_test.h"
 #include "potion_test.h"
 #include "Enemy_test.h"
+#include "room_test.h"
+
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
