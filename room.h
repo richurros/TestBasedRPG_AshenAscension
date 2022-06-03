@@ -16,13 +16,14 @@ private:
     string locationsAvailable;
     string itemsAvailable;
     string itemName;
-    //bool itemsTaken;
+    bool itemsTaken;
     int numOfItems;
+    bool EnemyBeat;
     vector<string> connectedRooms;
+
     
 public:
     Bag* bInventory;
-    bool itemsTaken;
     Room();
     Room(string name, string description, string NPCsAvailable, string locationsAvailable, string NPCDialogue, string NPCName, string Items, string ItemName, int numOfItems);
     string getName() { return name; }
@@ -36,6 +37,8 @@ public:
     string getNPCName() { return NPCName; }
     void setItemStatus(bool b);
     bool getItemStatus() { return itemsTaken; }
+    bool getEnemyBeat() { return EnemyBeat; }
+    void setEnemyBeat(bool b);
     vector<string> getConnectedRooms() { return connectedRooms; }
     void setConnectedRooms(vector<string> cr);
     void setConnectedRoom(string r);

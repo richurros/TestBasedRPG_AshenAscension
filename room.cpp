@@ -21,8 +21,12 @@ Room::Room(string n, string d, string NPCA, string locA, string npcD, string npc
 
 void Room::setItemStatus(bool b) {
     itemsTaken = b;
-    cout << "b: " << getItemStatus();
 }
+
+void Room::setEnemyBeat(bool b) {
+    EnemyBeat = b;
+}
+
 void Room::setName(string n) {
     name = n;
 }

@@ -2,7 +2,7 @@
 #include <regex>
 #include "player.h"
 #include "slowPrints.h"
-#include "generatePlayer.h"
+#include "GeneratePlayer.h"
 
 #include <chrono>
 #include <thread>
@@ -41,21 +41,21 @@ void AskForType(Player& p) {
             p.setDefense(10);
             p.setSpd(5);
             p.setMaxHealth(150);
-            p.setCombatPt(1 + p.getSpd() / 5);
-            //cout <<"speed: " << p.getSpd() << endl;
-            
+            p.setCombatPt(1 + p.getSpd() / 5); 
         }
         else if (type == "SPEEDSTER") {
             p.setAtk(15);
             p.setDefense(10);
             p.setSpd(15);
             p.setMaxHealth(100);
+            p.setCombatPt(1 + p.getSpd() / 5);
         }
         else if (type == "GUARDIAN") {
             p.setAtk(5);
             p.setDefense(15);
             p.setSpd(10);
             p.setMaxHealth(150);
+            p.setCombatPt(1 + p.getSpd() / 5);
         }
         else {
             cout << "         *** Not a valid class type! Enter 'BRUTE', 'SPEEDSTER', or 'GUARDIAN'! ***";
@@ -71,9 +71,13 @@ void DefaultItems(Player& p) {
     p.bInventory->addToBag(a1);
     Bag* b2 = new Bag("Combat Potion Pouch (Bag)", "Holds all of the potions I can use in battle", 1);
     Potion* p1 = new Potion("Potion of Greater Healing", "Heals for 50 points of HP", 1, 1, 1, 50);
+    Potion* p2 = new Potion("Potion of Healing", "Heals for 25 points of HP", 1, 1, 1, 25);
     b2->addToBag(p1);
+    b2->addToBag(p2);
     p.bInventory->addToBag(b2);
-    p.bInventory->printBag();
+    p.eqArmor(5);
+    p.eqWeapon(5);
+
 }
 
 void GeneratePlayer(Player& p) {
