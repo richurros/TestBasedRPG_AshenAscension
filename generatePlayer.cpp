@@ -1,8 +1,8 @@
 #include <iostream>
-#include <regex>
+//#include <regex>
 #include "player.h"
 #include "slowPrints.h"
-#include "GeneratePlayer.h"
+#include "generatePlayer.h"
 
 #include <chrono>
 #include <thread>
@@ -34,8 +34,8 @@ void AskForType(Player& p) {
     while (type != "BRUTE" && type != "SPEEDSTER" && type != "GUARDIAN") {
         cout << "\n" << p.getName() << ": I'm a ";
         cin >> type;
-        regex r("\\s+");
-        type = regex_replace(type, r, "");
+        //regex r("\\s+");
+        //type = regex_replace(type, r, "");
         if (type == "BRUTE") {
             p.setAtk(15);
             p.setDefense(10);

@@ -17,6 +17,7 @@ Room::Room(string n, string d, string NPCA, string locA, string npcD, string npc
     itemName = iN;
     numOfItems = NumOfItems;
     itemsTaken = false;
+    EnemyBeat = false;
 }
 
 void Room::setItemStatus(bool b) {

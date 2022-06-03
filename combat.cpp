@@ -31,7 +31,7 @@ bool combat(Player &x, Enemy &y)
 	{
 		cout << endl;
 		cout << y.getName() << " attacks " << x.getName() << "." << endl;
-		cout << y.getName() << "did " << y.attack(x) << " damage to " << x.getName() << "." << endl;
+		cout << y.getName() << " did " << y.attack(x) << " damage to " << x.getName() << "." << endl;
 		cout << endl;
 	}
 
@@ -61,8 +61,6 @@ bool combat(Player &x, Enemy &y)
 			//char input;
 			string input;
 			getline(cin, input);
-
-			INPUT:
 			
 			//cin >> input;
 			
@@ -70,7 +68,7 @@ bool combat(Player &x, Enemy &y)
 			{
 				cout << endl;
 				cout << x.getName() << " attacks " << y.getName() << "." << endl;
-				cout << x.getName() << "did " << x.attack(y) << " damage to " << y.getName() << "." << endl;			
+				cout << x.getName() << " did " << x.attack(y) << " damage to " << y.getName() << "." << endl;			
 				cout << endl;
 				turnPoint--;
 				break;
@@ -99,22 +97,33 @@ bool combat(Player &x, Enemy &y)
 				if (turnPoint == 1)
 				{
 					cout << "You only have one Combat Point left to either attack or defend." << endl;
-					goto INPUT;
+					continue;
 				}
 				else
-				{
+				{  
 					string itemName;
-					cout << "Please enter what item you would like to use?" << endl;
+					cout << "Please enter what item you would like to use or type NO" << endl;
 					cin >> itemName;
-					turnPoint--;
-					//x.usePotion(string itemName);
-					x.usePotion(itemName);
+					if (itemName == "NO")
+					{
+						continue;
+					}
+					else if (x.usePotion(itemName) == true)
+					{
+						turnPoint--;
+						continue;
+					}
+					else
+					{
+						cout << "Invalid: No such potion in Combat Potion Pouch\nPlease choose a valid potion" << endl;
+						continue;
+					}
+						
 				}
 			}
 			else
 			{
 				cout << "Invalid: Please type in one of the numbers given" << endl;
-				goto INPUT;
 			}
 		}
                         
@@ -131,13 +140,13 @@ bool combat(Player &x, Enemy &y)
 		{
 			cout << endl;
                 	cout << y.getName() << " attacks " << x.getName() << "." << endl;
-               		cout << y.getName() << "did " << y.attack(x) << " damage to " << x.getName() << "." << endl;
+               		cout << y.getName() << " did " << y.attack(x) << " damage to " << x.getName() << "." << endl;
                 	cout << endl;
 		}
 		else if (randNum == 2)
 		{
 			 cout << endl;
-                         cout << x.getName() << " defends himself." << endl;
+                         cout << y.getName() << " defends himself." << endl;
                          cout << endl;
                          x.setBoolDef(true);
 		}
@@ -147,13 +156,13 @@ bool combat(Player &x, Enemy &y)
 
 	if (x.getDmgTaken() > x.getMaxHealth())
   	{
-    		cout << x.getName() << "lost against " << y.getName() << "." << endl;
+    		cout << x.getName() << " lost against " << y.getName() << "." << endl;
     		DeathPrint("ASCENSION ENDED\n");
     		return false;
   	}
   	else
   	{
-    		cout << x.getName() << "won against " << y.getName() << "." << endl;
+    		cout << x.getName() << " won against " << y.getName() << "." << endl;
     		cout << x.getName() << "'s Health has been reset to full.'" << endl;
     		x.setDmgTaken(0);
 		return true;

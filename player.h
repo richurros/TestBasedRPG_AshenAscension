@@ -26,7 +26,6 @@ public:
     ~Player() {
 	
 	delete bInventory;
-	cout << "Deleted player" << endl;
     }
     
     void setType(string playerClass);
@@ -40,6 +39,6 @@ public:
     void move(Room &r);
     Room getLocation() { return location; }
     int attack(Character& x);
-    void usePotion(string potion);
+    bool usePotion(string potion);
 };
 

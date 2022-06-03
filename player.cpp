@@ -1,5 +1,6 @@
 #include "player.h"
 #include "item.h"
+#include <string>
 using namespace std;
 
 Player::Player() {
@@ -44,7 +45,7 @@ void Player::move(Room &r)
 
 int Player::attack(Character& x) {
     if (x.getBoolDef() == true) {
-        int damageDone = ((x.getDefense() / 100) * this->getAtk()) - x.getDefense();
+        int damageDone = ((int)(((50 - x.getDefense()) / 50.0) * (2*this->getAtk()))) - x.getDefense();
         if (damageDone > 0) {
             x.setDmgTaken(damageDone + x.getDmgTaken());
             x.setBoolDef(false);
@@ -54,29 +55,36 @@ int Player::attack(Character& x) {
             return 0;
         }
     } else {
-        int damageDone1 = ((x.getDefense() / 100) * this->getAtk());
+        int damageDone1 = ((int)(((50 - x.getDefense()) / 50.0) * (2*this->getAtk())));
         x.setDmgTaken(damageDone1 + x.getDmgTaken());
         return damageDone1;
     }
-}
+} 
 
-void Player::usePotion(string potion) {
+bool Player::usePotion(string potion) {
         for (int i = 0; i < bInventory->vBag.size(); i++)
         {
-                if (bInventory->vBag.at(i)->getName() == "Combat Pouch")
+                if (bInventory->vBag.at(i)->getName() == "Combat Potion Pouch (Bag)")
                 {
                         for (int j = 0; j < bInventory->vBag.at(i)->vBag.size(); i++)
                         {
-                                if (potion.find("Health") && bInventory->vBag.at(i)->vBag.at(j)->getName() == potion)
+                                if (potion.find("Healing") != string::npos && bInventory->vBag.at(i)->vBag.at(j)->getName() == potion)
                                 {
                                         setDmgTaken(getDmgTaken()-bInventory->vBag.at(i)->vBag.at(j)->getHealth());
+					if (getDmgTaken() < 0)
+					{
+						setDmgTaken(0);
+					}
+					return true;
                                 }
                                 else if (bInventory->vBag.at(i)->vBag.at(j)->getName() == potion)
                                 {
                                         setAtk(getAtk()*bInventory->vBag.at(i)->vBag.at(j)->getAttack());
                                         setDefense(getDefense()*bInventory->vBag.at(i)->vBag.at(j)->getDefense());
+					return true;
                                 }
                         }
                 }
       }
+      return false;	
 }

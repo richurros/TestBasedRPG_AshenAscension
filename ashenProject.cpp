@@ -1,4 +1,4 @@
-#include "GeneratePlayer.h"
+#include "generatePlayer.h"
 #include "generateRooms.h"
 #include "combat.h"
 #include "Enemy.h"
@@ -6,6 +6,7 @@
 #include "slowPrints.h"
 #include "bag.h"
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main()
@@ -23,7 +24,7 @@ int main()
     slowStringPrint("Oh, and I have picked up on alchemy during my time here. I'm putting some health potions in your backpack.\n", "Old Man: ");
     cout << "\n         ***Type 'HELP' at anytime for a list of available options*** \n";
     string input = "";
-    string locationToGoTo;
+    string locationToGoTo = "";
     string itemToPickUp;
     string itemToEquip;
     int roomPos = 0;
@@ -69,18 +70,30 @@ int main()
                         p.move(allRooms.at(i));
                         roomPos = i;
                         if (p.getLocation().getName()=="LAKE" && !(allRooms.at(roomPos).getEnemyBeat())) {
-                            Enemy e("Mutated Fish", 100, 10, 10, 1);
-                            combat(p, e);
+                            Enemy e = Enemy("Mutated Fish", 100, 10, 10, 1);
+			    bool c1 = combat(p, e);
+                            if(c1 == false) {
+				goto END;
+			    }
                             allRooms.at(roomPos).setEnemyBeat(true);
                         }else if (p.getLocation().getName() == "CAVE ENTRANCE" && !(allRooms.at(roomPos).getEnemyBeat())) {
-                            Enemy e1("Gargoyle", 100, 15, 15, 5);
-                            combat(p, e1);
-                            Enemy e2("Twinned Gargoyle", 150, 20, 20, 10);
-                            combat(p, e2);
+                            Enemy e1 = Enemy("Gargoyle", 100, 15, 15, 5);
+			    bool c2 = combat(p, e1);
+                            if(c2 == false) {
+				goto END;
+			    }
+                            Enemy e2 = Enemy("Twinned Gargoyle", 150, 20, 20, 10);
+			    bool c3 = combat(p, e2);
+                            if(c3 == false) {
+				goto END;
+			    }
                             allRooms.at(roomPos).setEnemyBeat(true);
                         }else if (p.getLocation().getName() == "LIGHT" && !(allRooms.at(roomPos).getEnemyBeat())) {
-                            Enemy b("Vampire", 250, 25, 25, 20);
-                            combat(p, b);
+                            Enemy b = Enemy("Vampire", 250, 25, 25, 20);
+			    bool c4 = combat(p, b);
+                            if(c4 == false) {
+				goto END;
+			    }
                             allRooms.at(roomPos).setEnemyBeat(true);
                         }
                     }
@@ -100,6 +113,7 @@ int main()
                 if (!(allRooms.at(roomPos).getItemStatus())) {
                     for (int i = 0; i < p.getLocation().getNumOfItemsInRoom(); ++i) {
                         p.bInventory->addToBag(p.getLocation().bInventory->vBag.at(i));
+			p.getLocation().bInventory->vBag.at(i) = nullptr;
                     }
                     bool ItemsPickedUp = true;
                     allRooms.at(roomPos).setItemStatus(true);
@@ -144,3 +158,10 @@ int main()
         }
 
     }
+    END: 
+    for (int i = 0; i < allRooms.size(); i++)
+    {
+	delete allRooms.at(i).bInventory;
+    }   
+
+}
