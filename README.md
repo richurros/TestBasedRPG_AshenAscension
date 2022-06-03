@@ -90,17 +90,24 @@ For this project, we used the composite design pattern for our Item class implem
 
 	
  
- > ## Final deliverable
- > All group members will give a demo to the TA/reader during lab time. The TA/reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
+  ## Final deliverable
+- Updated UML Class Diagram
+![umlClassDiagram3](FinalUML.png) 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+- Screenshot 1
+![ss1](SCREEN1.png)
+- Screenshot 2
+![ss2](SCREEN2.png)
+- Screenshot 3
+![ss3](SCREEN3.png)
  ## Installation/Usage
- > Instructions on installing and running your application
+- Visual Studio Installation/Usage Guide
+![VisualStudio1](VS1.png)
+![VisualStudio2](VS2.png)
+- Terminal on puTTY Installation/Usage Guide
+![p1](PUTTY1.png)
+![p3](PUTTY3.png)
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+- Overall our whole project was tested and validated through unit tests on our classes, testing focused around on each member's respective parts, and through extensive review on each other's work. Also cooperation, meeting up, working at the same time, and communication lead us to have a better time putting our respective works together.
  
