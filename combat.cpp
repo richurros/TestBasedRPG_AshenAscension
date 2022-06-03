@@ -103,7 +103,8 @@ bool combat(Player &x, Enemy &y)
 				{  
 					string itemName;
 					cout << "Please enter what item you would like to use or type NO" << endl;
-					cin >> itemName;
+					cin.clear();
+					getline(cin, itemName);
 					if (itemName == "NO")
 					{
 						continue;
