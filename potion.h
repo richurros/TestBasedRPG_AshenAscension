@@ -10,7 +10,7 @@ private:
         int defense;
         int health;
 public:
-        Potion(string n , string d , int i , int a, int df, int h);
+        Potion(string n, string d, int i, int a, int df, int h);
         int getAttack() const  { return attack; }
         void setAttack(int a);
         int getDefense() const { return defense; }
